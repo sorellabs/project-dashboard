@@ -27,18 +27,47 @@
   "calliope": {
     "output": "docs/api",
     "copyright": "© 2013 Quildreen \"Sorella\" Motta",
-    "packages": [{ "files": [ "src/*.ls" ] }]
+    "packages": [
+      {
+        "files": [
+          "src/*.ls"
+        ]
+      }
+    ]
   },
   "testling": {
     "files": "test/browser/suite.js",
     "preprocess": "npm run-script pretest-browser",
     "browsers": {
-      "ie": [8, 9, 10],
-      "firefox": [15, "nightly"],
-      "chrome": [21, 22, "canary"],
-      "opera": [10, 12, "next"],
-      "safari": [5.1]
+      "ie": [
+        8,
+        9,
+        10
+      ],
+      "firefox": [
+        15,
+        "nightly"
+      ],
+      "chrome": [
+        21,
+        22,
+        "canary"
+      ],
+      "opera": [
+        10,
+        12,
+        "next"
+      ],
+      "safari": [
+        5.1
+      ]
     },
     "harness": "mocha"
+  },
+  "dependencies": {
+    "express": "~3.1.0"
+  },
+  "config": {
+    "port": 8080
   }
 }
