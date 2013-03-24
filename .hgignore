@@ -20,3 +20,5 @@ lib
 lib-test
 syntax: glob
 test/browser/suite-bundle.js
+www/css
+www/scripts

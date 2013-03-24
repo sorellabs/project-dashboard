@@ -1,0 +1,188 @@
+/** screen.styl --- entry point for DON'T PANIC styles
+ *
+ * Copyright (c) 2013 Quildreen "Sorella" Motta <quildreen@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation files
+ * (the "Software"), to deal in the Software without restriction,
+ * including without limitation the rights to use, copy, modify, merge,
+ * publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ **/
+
+/** -- Font definitions --------------------------------------------- */
+@css {
+  @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+}
+
+/** -- Configuration ------------------------------------------------ */
+jsk-body-font = 'Open Sans', sans
+jsk-heading-font = 'Open Sans', sans
+jsk-base-line-height = 1.2em
+jsk-base-font-size = 16px
+jsk-base-colour = #eee
+
+
+/** -- Dependencies ------------------------------------------------- */
+@import "nib"
+global-reset()  /* So we don't affect JSK defs */
+
+@import "jumper-skirt/layout/grid"
+@import "jumper-skirt/layout/typography"
+
+
+/** -- Grid configuration ------------------------------------------- */
+jsk-grid-with = 100%
+
+
+/** -- Functions ---------------------------------------------------- */
+status-icon-colour(colour)
+  background-color: colour
+  border-color: rgba(colour, 0.25)
+
+/** -- Common Classes ----------------------------------------------- */
+.constrained
+  max-width: 940px
+  margin: 0 auto
+
+a
+  color: #7296FF
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+/** -- Projects ----------------------------------------------------- */
+.project
+  jsk-grid-make-row: 12
+  clearfix: yes
+  padding-bottom: 5em
+
+  .status-panel
+    jsk-grid-make-column: 2
+
+  .branch-panel
+    jsk-grid-make-column: 10
+
+/* The status of a project */
+.project .status-icon
+  width: 110px
+  height: 110px
+  border-radius: 100%
+  background: #fff
+  background-clip: padding-box
+  border: 5px solid rgba(255, 255, 255, 0.25)
+  position: relative
+  display: table-cell
+  text-align: center
+  vertical-align: middle
+  &.ok
+    status-icon-colour: #008C46
+  &.overdue
+    status-icon-colour: #FFBF00
+  &.broken
+    status-icon-colour: #CB3434
+  &.shipped
+    status-icon-colour: #00B2B2
+
+  .num-broken
+    color: rgba(#fff, 0.7)
+    font-size: 48px
+
+  .total
+    color: rgba(#fff, 0.5)
+    font-size: 28px
+    &::before
+      content: "/"
+      padding-right: 0.2em
+    
+  
+/* The title of a project */
+.project .title
+  margin-top: 0
+
+
+/* The progress of a project */
+.project .branch-progress
+  position: relative
+
+  .start-date, .shipping-date
+    position: absolute
+    top: 100%
+    margin-top: 5px
+    padding: 10px 0 0 5px
+    border-left: 1px solid rgba(#fff, 0.1)
+    white-space: nowrap
+    color: #777
+    font-size: 13px
+
+  .shipping-date
+    left: 100%
+    .overdue-time, .early-time
+      font-size: 0.8em
+      margin-left: 0.6em
+      text-shadow: 0 1px 0 rgba(#000, 0.7)
+    .overdue-time
+      color: #FFBF00
+    .early-time
+      color: #00FF80
+
+  .progress-bar
+    position: relative
+    background: #222
+    height: 15px
+    overflow: hidden
+    border: 2px solid rgba(#000, 0.15)
+    background-clip: padding-box
+
+    .deadline, .completeness
+      position: absolute
+      padding-right: 30px
+      left: -15px
+      top: 0
+      height: 15px
+      opacity: 0.5
+      box-shadow: 1px 0 2px rgba(#000, 0.7)
+      transform: skew(-45deg)
+      
+    .deadline
+      background: #FF4D4D
+
+    .completeness
+      background: #00FF80
+        
+
+/** -- Page layout -------------------------------------------------- */
+body
+  background: #2f2f2f
+  color: #aaa
+  padding: 0 50px
+  font-weight: 400
+
+#title
+  margin-bottom: 1.5em
+  .logo
+    text-align: right
+
+#project-list
+  padding: 2em 0
+  .projects
+    margin: 0
+
+#copyright
+  width: 100%
+  padding: 20px 0
+  text-align: right
+  font-size: 12px
+  color: #ccc

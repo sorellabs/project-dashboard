@@ -25,6 +25,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### -- Dependencies ----------------------------------------------------
+path    = require 'path'
 express = require 'express'
 
 

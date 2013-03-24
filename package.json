@@ -7,11 +7,15 @@
     "LiveScript": "~1.1.1",
     "mocha": "~1.8.1",
     "es5-shim": "~2.0.5",
-    "browserify": "~2.4.3"
+    "browserify": "~2.7.3",
+    "nib": "~0.9.1",
+    "stylus": "~0.32.1",
+    "jumper-skirt": "~0.1.0"
   },
   "scripts": {
-    "cc": "./node_modules/.bin/lsc -o lib -c src/*.ls",
+    "cc": "./node_modules/.bin/lsc -o lib -c src/*.ls && npm run-script css-cc",
     "test-cc": "./node_modules/.bin/lsc -o lib-test -c test/*.ls",
+    "css-cc": "./node_modules/.bin/stylus -I node_modules/jumper-skirt/src -I node_modules/nib/lib -o www/css src/media/stylus",
     "pretest": "npm run-script cc && npm run-script test-cc",
     "test": "./node_modules/.bin/mocha lib-test/*.js",
     "pretest-browser": "npm run-script pretest && ./node_modules/.bin/browserify -o test/browser/suite-bundle.js -e test/browser/suite.js",

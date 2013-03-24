@@ -13,18 +13,102 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon-144x144.png">
   </head>
   <body>
-    <section id="application">
+    <section id="application" class="constrained">
       <header id="title">
         <h1 class="logo">DON'T PANIC</h1>
       </header>
 
-      <section id="project-list"></section>
+      <section id="project-list">
+        <ul class="projects unstyled">
+          <li class="project">
+            <div class="status-panel">
+              <div class="status-icon broken">
+                <span class="num-broken">3</span>
+                <span class="total">6</span>
+              </div>
+            </div>
+            <div class="branch-panel">
+              <h2 class="title">The Zombie Apocalypse</h2>
+              <div class="branch-progress">
+                <div class="progress-bar">
+                  <div class="deadline" style="width:70%"></div>
+                  <div class="completeness" style="width:25%"></div>
+                </div>
+                <div class="start-date">3rd March</div>
+                <div class="shipping-date">9th April</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="project">
+            <div class="status-panel">
+              <div class="status-icon ok">
+              </div>
+            </div>
+            <div class="branch-panel">
+              <h2 class="title">The Zombie Apocalypse</h2>
+              <div class="branch-progress">
+                <div class="progress-bar">
+                  <div class="deadline" style="width:70%"></div>
+                  <div class="completeness" style="width:25%"></div>
+                </div>
+                <div class="start-date">3rd March</div>
+                <div class="shipping-date">9th April</div>
+              </div>
+            </div>
+          </li>
+
+          <li class="project">
+            <div class="status-panel">
+              <div class="status-icon overdue">
+              </div>
+            </div>
+            <div class="branch-panel">
+              <h2 class="title">The Zombie Apocalypse</h2>
+              <div class="branch-progress">
+                <div class="progress-bar">
+                  <div class="deadline" style="width:100%"></div>
+                  <div class="completeness" style="width:55%"></div>
+                </div>
+                <div class="start-date">3rd March</div>
+                <div class="shipping-date" style="left: 80%">9th April
+                  <span class="overdue-time">(7 days overdue)</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="project">
+            <div class="status-panel">
+              <div class="status-icon shipped">
+              </div>
+            </div>
+            <div class="branch-panel">
+              <h2 class="title">The Zombie Apocalypse</h2>
+              <div class="branch-progress">
+                <div class="progress-bar">
+                  <div class="deadline" style="width:70%"></div>
+                  <div class="completeness" style="width:100%"></div>
+                </div>
+                <div class="start-date">3rd March</div>
+                <div class="shipping-date" style="left: 71%">9th April
+                  <span class="early-time">(12 days early)</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+      </section>
 
       <footer id="copyright">
-        <p>Hacked while drinking something not entirely unlike tea.<br>
-           (c) 2013 Quildreen "Sorella" Motta. MIT licensed.
-           Don't forget your towel.
-        </p>
+        <div class="constrained">
+          <p>Hacked while drinking something not entirely unlike tea.<br>
+             (c) 2013 
+             <a href="http://killdream.github.com/">Quildreen "Sorella" Motta</a>.
+             MIT licensed.<br>
+             Don't forget your towel.
+          </p>
+        </div>
       </footer>
     </section>
 
