@@ -27,15 +27,17 @@
 ### -- Dependencies ----------------------------------------------------
 path    = require 'path'
 express = require 'express'
-
+io      = require 'socket.io'
 
 ### -- Middlewares -----------------------------------------------------
 app = express!
+server = (require 'http').create-server app
 app.use (express.static (path.resolve __dirname, '..', 'www'))
 
 
 ### -- Exposing the service --------------------------------------------
 port = process.env.npm_package_config_port or 8080
 
-app.listen port
+io.listen server
+server.listen port
 console.log "> Listening at http://localhost:#port/"

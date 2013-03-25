@@ -69,7 +69,8 @@
     "harness": "mocha"
   },
   "dependencies": {
-    "express": "~3.1.0"
+    "express": "~3.1.0",
+    "socket.io": "~0.9.13"
   },
   "config": {
     "port": 8080
